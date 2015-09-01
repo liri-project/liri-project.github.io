@@ -2,6 +2,8 @@ var Q = document.querySelector.bind(document);
 var Qq = document.querySelectorAll.bind(document);
 HTMLElement.prototype.Q = HTMLElement.prototype.querySelector;
 HTMLElement.prototype.Qq = HTMLElement.prototype.querySelectorAll;
+var b_hgt, b_wth;
+getViewport();
 
 function posTop() {
     return typeof window.pageYOffset != 'undefined' ? window.pageYOffset: document.documentElement.scrollTop? document.documentElement.scrollTop: document.body.scrollTop? document.body.scrollTop:0;
@@ -19,7 +21,7 @@ function animation(effectFrame, duration, from, to, easing, framespacing) {
     from = from || 0;
     to = to || 1;
     framespacing = framespacing || 1;
-    
+
     (function interval() {
         var time = (Date.now() - start);
          if(time < duration) {
@@ -32,13 +34,13 @@ function animation(effectFrame, duration, from, to, easing, framespacing) {
         }
     }());
 }
-           
+
 window.smoothScrollTo = function (target, duration) {
-    var start = window.pageYOffset;        
+    var start = window.pageYOffset;
     duration = duration || 500;
-    
+
     animation(function(position) { window.scroll(0,position); }, duration, start, target);
-    
+
 };
 
 function detectIE() {
@@ -82,20 +84,180 @@ if (typeof window.innerWidth != 'undefined') {
  }
 }
 
+var mouse_x_pos = 0;
+var mouse_y_pos = 0;
+
+window.onmousemove = getMousePosition;
+
+function getMousePosition(e) {
+ if (e == undefined) e = window.event;
+ if (e.pageX || e.pageY) {
+  mouse_x_pos = e.pageX;
+  mouse_y_pos = e.pageY;
+ }
+ else if (e.clientX || e.clientY) {
+  mouse_x_pos = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+  mouse_y_pos = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+ }
+}
+
+function resetCircle(interval) {
+    var circle = Q('#circle_anim');
+    setTimeout(function() {
+        circle.style.background = 'transparent';
+        circle.style.left = 0;
+        circle.style.top = 0;
+        circle.style.transition = "none";
+        circle.style.transform = 'scale(10) translateZ(0)';
+    },interval);
+}
+
 function openDownloadPage() {
-    Q('#download').style.display = "block";
-    Q('#discover').style.display = "none";
     Q('#discover_tab').className = "";
+    Q('#code_tab').className = "";
+    Q('#about_tab').className = "";
     Q('#download_tab').className = "selected";
     Q('#download_icon').className = "material-icons md-18 md-light";
     Q('#discover_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#code_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#about_icon').className = "material-icons md-18 md-light md-inactive";
+    var circle = Q('#circle_anim');
+    circle.style.background = "#3F51B5";
+    circle.style.left = mouse_x_pos;
+    circle.style.top = mouse_y_pos;
+    circle.style.transition = "transform 1s";
+    circle.style.transform = 'scale(1000) translateZ(0)';
+    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    download.style.zIndex = 20;
+    download.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    download.style.display = "block";
+    setTimeout(function(){
+      download.style.opacity = 1;
+    },100);
+    setTimeout(function(){
+      download.style.zIndex = 5;
+      discover.style.display = "none";
+      discover.style.opacity = 0;
+      discover.style.zIndex = 0;
+      code.style.display = "none";
+      code.style.opacity = 0;
+      code.style.zIndex = 0;
+      about.style.display = "none";
+      about.style.opacity = 0;
+      about.style.zIndex = 0;
+    },500);
+    resetCircle(500);
 }
 
-function openDiscoverPage() {
-    Q('#download').style.display = "none";
-    Q('#discover').style.display = "block";
-    Q('#discover_tab').className = "selected";
+function openCodePage() {
+    Q('#discover_tab').className = "";
+    Q('#code_tab').className = "selected";
+    Q('#about_tab').className = "";
     Q('#download_tab').className = "";
     Q('#download_icon').className = "material-icons md-18 md-light md-inactive";
-    Q('#discover_icon').className = "material-icons md-18 md-light";
+    Q('#discover_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#code_icon').className = "material-icons md-18 md-light";
+    Q('#about_icon').className = "material-icons md-18 md-light md-inactive";
+    var circle = Q('#circle_anim');
+    circle.style.background = "#26A69A";
+    circle.style.left = mouse_x_pos;
+    circle.style.top = mouse_y_pos;
+    circle.style.transition = "transform 1s";
+    circle.style.transform = 'scale(1000) translateZ(0)';
+    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    code.style.zIndex = 20;
+    code.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    code.style.display = "block";
+    setTimeout(function(){
+      code.style.opacity = 1;
+    },100);
+    setTimeout(function(){
+      code.style.zIndex = 5;
+      discover.style.display = "none";
+      discover.style.opacity = 0;
+      discover.style.zIndex = 0;
+      download.style.display = "none";
+      download.style.opacity = 0;
+      download.style.zIndex = 0;
+      about.style.display = "none";
+      about.style.opacity = 0;
+      about.style.zIndex = 0;
+    },500);
+    resetCircle(500);
 }
+
+function openAboutPage() {
+    Q('#discover_tab').className = "";
+    Q('#code_tab').className = "";
+    Q('#about_tab').className = "selected";
+    Q('#download_tab').className = "";
+    Q('#download_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#discover_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#code_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#about_icon').className = "material-icons md-18 md-light";
+    var circle = Q('#circle_anim');
+    circle.style.background = "lightgrey";
+    circle.style.left = mouse_x_pos;
+    circle.style.top = mouse_y_pos;
+    circle.style.transition = "transform 1s";
+    circle.style.transform = 'scale(1000) translateZ(0)';
+    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    about.style.zIndex = 20;
+    about.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    about.style.display = "block";
+    setTimeout(function(){
+      about.style.opacity = 1;
+    },100);
+    setTimeout(function(){
+      about.style.zIndex = 5;
+      discover.style.display = "none";
+      discover.style.opacity = 0;
+      discover.style.zIndex = 0;
+      download.style.display = "none";
+      download.style.opacity = 0;
+      download.style.zIndex = 0;
+      code.style.display = "none";
+      code.style.opacity = 0;
+      code.style.zIndex = 0;
+    },500);
+    resetCircle(500);
+}
+
+function openDiscoverPage(x,y) {
+    Q('#discover_tab').className = "selected";
+    Q('#download_tab').className = "";
+    Q('#code_tab').className = "";
+    Q('#about_tab').className = "";
+    Q('#download_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#code_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#about_icon').className = "material-icons md-18 md-light md-inactive";
+    Q('#discover_icon').className = "material-icons md-18 md-light";
+    var circle = Q('#circle_anim');
+    circle.style.background = "#EF5350";
+    circle.style.left = x;
+    circle.style.top = y;
+    circle.style.transition = "transform 1s";
+    circle.style.transform = 'scale(1000) translateZ(0)';
+    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    discover.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    discover.style.zIndex = 20;
+    discover.style.transition = "opacity 0.5s";
+    discover.style.display = "block";
+    setTimeout(function(){
+      discover.style.opacity = 1;
+    },100);
+    setTimeout(function(){
+        download.style.display = "none";
+        download.style.opacity = 0;
+        code.style.display = "none";
+        code.style.opacity = 0;
+        about.style.display = "none";
+        about.style.opacity = 0;
+    },500);
+    setTimeout(function(){
+      discover.style.zIndex = 5;
+    },500);
+    resetCircle(500);
+}
+
+openDiscoverPage(b_wth/2,Q('#top_menu').offsetHeight - 10);

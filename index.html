@@ -9,28 +9,36 @@
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 		<meta charset="utf-8">
 	</head>
-    <body onscroll="makePresentationAwesome();" onresize="getViewport()">
+    <body onresize="getViewport()">
         <header id="top_menu" class="elevation-1">
             <div id="top_menu_title">
                 <img id="top_menu_title_img" src="images/liri-browser.png">
                 <span id="top_menu_title_text">Liri Browser</span>
             </div>
             <ul id="top_menu_nav">
-                <li id="discover_tab" class="selected" onclick="openDiscoverPage()"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span> Discover</span></li>
-                <li id="download_tab" onclick="openDownloadPage()"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span> Download 0.2</span></li>
-                <li><i class="material-icons md-18 md-light md-inactive">code</i><span> Get the code</span></li>
-                <li><i class="material-icons md-18 md-light md-inactive">perm_identity</i><span> About</span></li>
+                <li id="discover_tab" class="selected" onclick="openDiscoverPage(mouse_x_pos,mouse_y_pos)"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span>Discover</span></li>
+                <li id="download_tab" onclick="openDownloadPage()"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span>Download 0.2</span></li>
+                <li id="code_tab"  onclick="openCodePage()"><i class="material-icons md-18 md-light md-inactive" id="code_icon" >code</i><span>Get the code</span></li>
+                <li id="about_tab"  onclick="openAboutPage()"><i class="material-icons md-18 md-light md-inactive" id="about_icon" >perm_identity</i><span>About</span></li>
             </ul>
         </header>
+        <div id="circle_anim"></div>
         <div id="discover" class="content">
-            <img src="images/macbookair3.png" id="laptop">
-            <h2 class="center_align">Say hello to Liri, the open-source, cross-plateform and material-design web browser.</h2>
+            <img src="images/macbookair.png" id="laptop">
+            <h2 class="center_align">Say hello to Liri, the open-source, cross-plateforms and material-design web browser.</h2>
         </div>
         <div id="download" class="content hidden">
             <h1>Linux</h1>
-            <a class="raised_button white">Simple Installation Script</a>
+            <a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">Simple Installation Script</a>
             <h1>Windows</h1>
-            <a class="raised_button white">Portable test version</a>
+            <a class="raised_button white" href="https://github.com/liri-browser/liri-browser/releases/download/v0.2/material-browser-0.2-windows-portable-testing.zip" target="_blank">Portable version (.zip)</a>
+        </div>
+				<div id="code" class="content hidden">
+            <h1>Code on GitHub</h1>
+            <a class="raised_button white" href="https://github.com/liri-browser" target="_blank">GitHub</a>
+        </div>
+				<div id="about" class="content hidden">
+
         </div>
         <script src="js/script.js"></script>
     </body>
