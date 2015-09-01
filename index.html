@@ -1,0 +1,37 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Liri Browser</title>
+		<meta name="description" content="Discover Liri, the open-source and cross-plateform material-design web browser.">
+	    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel='stylesheet' href='style/style.css'>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+		<meta charset="utf-8">
+	</head>
+    <body onscroll="makePresentationAwesome();" onresize="getViewport()">
+        <header id="top_menu" class="elevation-1">
+            <div id="top_menu_title">
+                <img id="top_menu_title_img" src="images/liri-browser.png">
+                <span id="top_menu_title_text">Liri Browser</span>
+            </div>
+            <ul id="top_menu_nav">
+                <li id="discover_tab" class="selected" onclick="openDiscoverPage()"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span> Discover</span></li>
+                <li id="download_tab" onclick="openDownloadPage()"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span> Download 0.2</span></li>
+                <li><i class="material-icons md-18 md-light md-inactive">code</i><span> Get the code</span></li>
+                <li><i class="material-icons md-18 md-light md-inactive">perm_identity</i><span> About</span></li>
+            </ul>
+        </header>
+        <div id="discover" class="content">
+            <img src="images/macbookair3.png" id="laptop">
+            <h2 class="center_align">Say hello to Liri, the open-source, cross-plateform and material-design web browser.</h2>
+        </div>
+        <div id="download" class="content hidden">
+            <h1>Linux</h1>
+            <a class="raised_button white">Simple Installation Script</a>
+            <h1>Windows</h1>
+            <a class="raised_button white">Portable test version</a>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
