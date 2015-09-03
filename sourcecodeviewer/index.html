@@ -34,6 +34,7 @@
   var code = document.URL;
   code = code.slice(code.indexOf("?c") + 3,code.length)
   code = decodeURI(code);
+  code = "<!DOCTYPE html><html>" + code + "</html>"
   code = style_html(code, {
       'indent_size': 2,
       'indent_char': ' ',
