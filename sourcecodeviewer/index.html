@@ -28,7 +28,8 @@
       }
       return str_hasil;
   }
-  var code = location.search.split('c=')[1];
+  var code = document.URL;
+  code = code.slice(code.indexOf("?c") + 3,code.length)
   code = decodeURI(code);
   document.getElementById('source_container').innerHTML = code;
   alert(code);
