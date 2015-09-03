@@ -2,12 +2,12 @@
 <head>
   <link rel="stylesheet" href="http://softwaremaniacs.org/media/soft/highlight/styles/tomorrow.css">
   <script src="http://softwaremaniacs.org/media/soft/highlight/highlight.pack.js"></script>
-  <script src="beautify.js"></script>
+  <script src="test.js"></script>
   <script src="beautify-html.js"></script>
 </head>
 <body style="margin:0;padding:0">
   <pre><code class="xml" id="source_container">
-    &lt;ul&gt;&lt;li&gt;hi /li&gt;li&gt;hi &lt;/li&gt;&lt;li&gt;hi &lt;/li&gt;&lt;/ul&gt;
+
   </pre></code>
   <script>
   function replaceall(str,replace,with_this)
@@ -33,18 +33,16 @@
   var code = document.URL;
   code = code.slice(code.indexOf("?c") + 3,code.length)
   code = decodeURI(code);
-  document.getElementById('source_container').innerHTML = html_beautify(code,{
-      'indent_inner_html': false,
+  code = style_html(code, {
       'indent_size': 2,
       'indent_char': ' ',
-      'wrap_line_length': 78,
+      'max_char': 78,
       'brace_style': 'expand',
-      'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u'],
-      'preserve_newlines': true,
-      'max_preserve_newlines': 5,
-      'indent_handlebars': false,
-      'extra_liners': ['/html']
+      'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']
     });
+    code = replaceall(code,"<","&lt;");
+    code = replaceall(code,">","&gt;");
+  document.getElementById('source_container').innerHTML = code;
   hljs.tabReplace = '    ';
   hljs.initHighlightingOnLoad();
   </script>
