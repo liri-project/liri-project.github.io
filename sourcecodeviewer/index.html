@@ -5,6 +5,7 @@
   <script>
   var code = location.search.split('c=')[1];
   document.getElementById('source_container').innerHTML = code;
+  alert(document.getElementById('source_container').innerHTML);
   hljs.tabReplace = '    ';
   hljs.initHighlightingOnLoad();
   </script>
