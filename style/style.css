@@ -73,7 +73,8 @@ a {
   position: fixed;
   bottom: 10;
   transition: 0.5s;
-  right: -60;
+  right: 10;
+  opacity: 0;
   z-index: 50;
   width: 45;
 }
@@ -278,9 +279,24 @@ h2 {
     width: 100%;
   }
 
+  #discover > h2 {
+    margin: 0 10;
+    margin-bottom: 50;
+  }
+
+  #laptop {
+    margin-top: 40;
+  }
+
   .feature .right {
     text-align: left;
     margin-top: 50;
   }
+
+  .feature {
+    padding-top: 130px;
+    padding: 10;
+  }
+
 
 }

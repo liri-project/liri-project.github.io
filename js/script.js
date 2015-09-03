@@ -283,16 +283,21 @@ var nav_top_offset = Q('#top_menu_nav').offsetTop;
 function updateTopMenu() {
   var  top_menu = Q('#top_menu');
   if(posTop() > nav_top_offset) {
-    top_menu.style.transform = "translateY(-" + (nav_top_offset - 25)+ "px)";
+    if(b_wth > 800)
+      top_menu.style.transform = "translateY(-" + (nav_top_offset - 25)+ "px)";
+    else
+      top_menu.style.transform = "translateY(-" + (nav_top_offset - 12)+ "px)";
     top_menu.style.position = "fixed";
-    Q('#second_nav_img').style.right = 30;
+    if(b_wth > 800)
+      Q('#second_nav_img').style.opacity = 1;
   }
   else {
     top_menu.style.transform = "translateY(0px)";
     top_menu.style.position = "relative";
-    if(b_wth >= 800)
-      Q('#second_nav_img').style.right = -60;
+    if(b_wth > 800)
+      Q('#second_nav_img').style.opacity = 0;
   }
 }
-
+if(b_wth <= 800)
+  document.body.style.overflowX = "hidden";
 openDiscoverPage(b_wth/2,Q('#top_menu').offsetHeight - 10);
