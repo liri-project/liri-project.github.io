@@ -38,50 +38,43 @@ function animation(effectFrame, duration, from, to, easing, framespacing) {
 window.smoothScrollTo = function (target, duration) {
     var start = window.pageYOffset;
     duration = duration || 500;
-
     animation(function(position) { window.scroll(0,position); }, duration, start, target);
-
 };
 
 function detectIE() {
     var ua = window.navigator.userAgent;
-
     var msie = ua.indexOf('MSIE ');
     if (msie > 0) {
     // IE 10 or older => return version number
     return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
     }
-
     var trident = ua.indexOf('Trident/');
     if (trident > 0) {
     // IE 11 => return version number
     var rv = ua.indexOf('rv:');
     return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
     }
-
     var edge = ua.indexOf('Edge/');
     if (edge > 0) {
     // IE 12 => return version number
     return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
     }
-
     // other browser
     return false;
 }
 
 function getViewport() {
+  if (typeof window.innerWidth != 'undefined') {
+    b_wth = window.innerWidth,
+    b_hgt = window.innerHeight
+  }
 
-if (typeof window.innerWidth != 'undefined') {
-   b_wth = window.innerWidth,
-   b_hgt = window.innerHeight
- }
-
- else if (typeof document.documentElement != 'undefined'
- && typeof document.documentElement.clientWidth !=
- 'undefined' && document.documentElement.clientWidth != 0) {
+  else if (typeof document.documentElement != 'undefined'
+  && typeof document.documentElement.clientWidth !=
+  'undefined' && document.documentElement.clientWidth != 0) {
     b_wth = document.documentElement.clientWidth,
     b_hgt = document.documentElement.clientHeight
- }
+  }
 }
 
 var mouse_x_pos = 0;
@@ -112,6 +105,27 @@ function resetCircle(interval) {
     },interval);
 }
 
+function checkScroll(to_tab) {
+  if(posTop() != 0) {
+    smoothScrollTo(0,200);
+    setTimeout(function() {openTab(to_tab);},200);
+  }
+  else {
+    openTab(to_tab);
+  }
+}
+
+function openTab(to_tab) {
+  if(to_tab == "discover")
+    openDiscoverPage(mouse_x_pos,mouse_y_pos);
+  else if(to_tab == "download")
+    openDownloadPage();
+  else if (to_tab == "code")
+    openCodePage();
+  else if (to_tab == "about")
+    openAboutPage();
+}
+
 function openDownloadPage() {
     Q('#discover_tab').className = "";
     Q('#code_tab').className = "";
@@ -130,6 +144,7 @@ function openDownloadPage() {
     var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
     download.style.zIndex = 20;
     download.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    download.style.top = Q('#top_menu').offsetHeight;
     download.style.display = "block";
     setTimeout(function(){
       download.style.opacity = 1;
@@ -167,6 +182,7 @@ function openCodePage() {
     var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
     code.style.zIndex = 20;
     code.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    code.style.top = Q('#top_menu').offsetHeight;
     code.style.display = "block";
     setTimeout(function(){
       code.style.opacity = 1;
@@ -204,6 +220,7 @@ function openAboutPage() {
     var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
     about.style.zIndex = 20;
     about.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    about.style.top = Q('#top_menu').offsetHeight;
     about.style.display = "block";
     setTimeout(function(){
       about.style.opacity = 1;
@@ -240,6 +257,7 @@ function openDiscoverPage(x,y) {
     circle.style.transform = 'scale(1000) translateZ(0)';
     var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
     discover.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
+    discover.style.top = Q('#top_menu').offsetHeight;
     discover.style.zIndex = 20;
     discover.style.transition = "opacity 0.5s";
     discover.style.display = "block";
@@ -258,6 +276,23 @@ function openDiscoverPage(x,y) {
       discover.style.zIndex = 5;
     },500);
     resetCircle(500);
+}
+
+var nav_top_offset = Q('#top_menu_nav').offsetTop;
+
+function updateTopMenu() {
+  var  top_menu = Q('#top_menu');
+  if(posTop() > nav_top_offset) {
+    top_menu.style.transform = "translateY(-" + (nav_top_offset - 25)+ "px)";
+    top_menu.style.position = "fixed";
+    Q('#second_nav_img').style.right = 30;
+  }
+  else {
+    top_menu.style.transform = "translateY(0px)";
+    top_menu.style.position = "relative";
+    if(b_wth >= 800)
+      Q('#second_nav_img').style.right = -60;
+  }
 }
 
 openDiscoverPage(b_wth/2,Q('#top_menu').offsetHeight - 10);

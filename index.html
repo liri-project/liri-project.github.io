@@ -3,30 +3,97 @@
 	<head>
 		<title>Liri Browser</title>
 		<meta name="description" content="Discover Liri, the open-source and cross-plateform material-design web browser.">
-	    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel='stylesheet' href='style/style.css'>
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta charset="utf-8">
 	</head>
-    <body onresize="getViewport()">
+    <body onresize="getViewport()" onscroll="updateTopMenu()">
         <header id="top_menu" class="elevation-1">
             <div id="top_menu_title">
                 <img id="top_menu_title_img" src="images/liri-browser.png">
                 <span id="top_menu_title_text">Liri Browser</span>
             </div>
             <ul id="top_menu_nav">
-                <li id="discover_tab" class="selected" onclick="openDiscoverPage(mouse_x_pos,mouse_y_pos)"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span>Discover</span></li>
-                <li id="download_tab" onclick="openDownloadPage()"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span>Download 0.2</span></li>
-                <li id="code_tab"  onclick="openCodePage()"><i class="material-icons md-18 md-light md-inactive" id="code_icon" >code</i><span>Get the code</span></li>
-                <li id="about_tab"  onclick="openAboutPage()"><i class="material-icons md-18 md-light md-inactive" id="about_icon" >perm_identity</i><span>About</span></li>
+                <li id="discover_tab" class="selected" onclick="checkScroll('discover')"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span>Discover</span></li>
+                <li id="download_tab" onclick="checkScroll('download')"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span>Download 0.2</span></li>
+                <li id="code_tab"  onclick="checkScroll('code')"><i class="material-icons md-18 md-light md-inactive" id="code_icon" >code</i><span>Get the code</span></li>
+                <li id="about_tab"  onclick="checkScroll('about')"><i class="material-icons md-18 md-light md-inactive" id="about_icon" >perm_identity</i><span>About</span></li>
             </ul>
+						<img id="second_nav_img" src="images/liri-browser.png">
         </header>
         <div id="circle_anim"></div>
         <div id="discover" class="content">
             <img src="images/macbookair.png" id="laptop">
             <h2 class="center_align">Say hello to Liri, the open-source, cross-plateforms and material-design web browser.</h2>
+						<div class="feature" style="background:#78909C">
+							<div class="left">
+								<h2>Material Design</h2>
+								<p class="feature_description">
+									Liri is proudly powered by QML-Material, a QML framework developped by Papyros, reposing on Google's Material Design. The User Interface is aimed to be as minimal and meaninful as possible.
+								</p>
+							</div>
+							<div class="right">
+								<img src="images/feature_md.png" class="elevation-1">
+							</div>
+						</div>
+						<div class="feature">
+							<div class="left center_align" >
+								<img src="https://raw.githubusercontent.com/materialos/Icons/master/Wayne%20Kosimoto/Raster/Edited/chromium.png" id="chromium_img">
+							</div>
+							<div class="right">
+								<h2>Chromium Engine</h2>
+								<p class="feature_description">
+								  Liri relies on QtWebEngine, the brand new Qt webrenderer based on Chromium, the most powerful and fastest webengine in the world, which supports the last web-standards.
+								</p>
+							</div>
+						</div>
+						<div class="feature" style="background:#78909C">
+							<div class="left">
+								<h2>Open Source</h2>
+								<p class="feature_description">
+									Liri's code is public, even this website's. Everyone is welcome to contribute and make Liri better. We use the awesome platform GitHub, which helps you to follow our progresses and contribute (code, bug-reports, translations).
+								</p>
+							</div>
+							<div class="right">
+								<img src="images/feature_github.png" class="elevation-1">
+							</div>
+						</div>
+						<div class="feature" style="">
+							<div class="left">
+								<img src="images/feature_cross.png" style="border-radius:0px">
+							</div>
+							<div class="right">
+								<h2>Cross-plateforms</h2>
+								<p class="feature_description">
+									Wether you're running Linux, OSX or Windows, you'll be able to compile and run Liri. We'll do as much as we can to provide up-to-date builds for every platforms.
+								</p>
+							</div>
+						</div>
+						<div class="feature" style="background:#78909C">
+							<div class="left">
+								<h2>Theme-color support</h2>
+								<p class="feature_description">
+									There are other things that make Liri even more awesome. One of them is theme-color support. Every web-developper can choose a color, and Liri will match it.
+								</p>
+							</div>
+							<div class="right">
+								<img src="images/feature_themecolor.png" class="elevation-1">
+							</div>
+						</div>
+						<div class="feature" >
+							<div class="left">
+									<img src="images/feature_source.png" class="elevation-1" width="90%">
+							</div>
+							<div class="right">
+								<h2>Highlighted and auto-indented SourceCodeViewer</h2>
+								<p class="feature_description">
+									Another good thing : our SourceCodeViewer. Aren't you tired of reading these condensed code sources ? Liri colors and arranges them to make them readable.
+								</p>
+							</div>
+						</div>
         </div>
         <div id="download" class="content hidden">
             <h1>Linux</h1>

@@ -16,6 +16,7 @@ a {
     background: #455A64;
     color: white;
     position: relative;
+    width: 100%;
     padding: 20;
     z-index: 30;
 }
@@ -51,6 +52,10 @@ a {
     font-size: 15;
 }
 
+#top_menu_nav li:first-child {
+  padding: 0 30;
+}
+
 #top_menu_nav li span, #top_menu_nav li i{
     vertical-align: middle;
     transition: 0.5s;
@@ -64,6 +69,15 @@ a {
     color: white;
 }
 
+#second_nav_img {
+  position: fixed;
+  bottom: 10;
+  transition: 0.5s;
+  right: -60;
+  z-index: 50;
+  width: 45;
+}
+
 .content {
     padding: 30;
     position: absolute;
@@ -74,24 +88,54 @@ a {
     background: #EF5350;
     color: white;
     opacity: 0;
-    padding: 80;
+    padding: 0;
     transition: opacity 0.5s;
 }
 
-#discover #greeting {
-    font-size: 40;
+#discover > h2 {
     text-align: center;
-    font-weight: 100;
+    margin: 0 80;
+    margin-bottom: 80;
 }
 
 #laptop {
     width: 60%;
+    margin: 80;
     left:50%;
     margin-bottom: 40;
     position: relative;
     margin-left: -30%;
 }
 
+.feature {
+  padding-top: 130px;
+  padding: 80;
+}
+
+.feature img {
+  width: 80%;
+  border-radius: 2px;
+}
+
+#chromium_img {
+  width: 256px;
+}
+
+.feature_description {
+  font-size: 25;
+  margin-top: 10;
+  font-weight: 300;
+}
+
+.feature .left, .feature .right {
+  display: inline-block;
+  vertical-align: middle;
+  width: 49%;
+}
+
+.feature .right {
+  text-align: right;
+}
 
 #download {
     color: white;
