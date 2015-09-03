@@ -2,17 +2,38 @@
 <head>
   <link rel="stylesheet" href="http://softwaremaniacs.org/media/soft/highlight/styles/tomorrow.css">
   <script src="http://softwaremaniacs.org/media/soft/highlight/highlight.pack.js"></script>
-  <script>
-  var code = location.search.split('c=')[1];
-  document.getElementById('source_container').innerHTML = code;
-  alert(document.getElementById('source_container').innerHTML);
-  hljs.tabReplace = '    ';
-  hljs.initHighlightingOnLoad();
-  </script>
+
 </head>
 <body style="margin:0;padding:0">
   <pre><code class="xml" id="source_container">
     &lt;ul&gt;&lt;li&gt;hi /li&gt;li&gt;hi &lt;/li&gt;&lt;li&gt;hi &lt;/li&gt;&lt;/ul&gt;
   </pre></code>
+  <script>
+  function replaceall(str,replace,with_this)
+  {
+      var str_hasil ="";
+      var temp;
+      for(var i=0;i<str.length;i++) // not need to be equal. it causes the last change: undefined..
+      {
+          if (str[i] == replace)
+          {
+              temp = with_this;
+          }
+          else
+          {
+                  temp = str[i];
+          }
+
+          str_hasil += temp;
+      }
+      return str_hasil;
+  }
+  var code = location.search.split('c=')[1];
+  code = decodeURI(code);
+  document.getElementById('source_container').innerHTML = code;
+  alert(code);
+  hljs.tabReplace = '    ';
+  hljs.initHighlightingOnLoad();
+  </script>
   </body>
 </html>
