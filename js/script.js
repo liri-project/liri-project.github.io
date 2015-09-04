@@ -212,7 +212,7 @@ function openAboutPage() {
     Q('#code_icon').className = "material-icons md-18 md-light md-inactive";
     Q('#about_icon').className = "material-icons md-18 md-light";
     var circle = Q('#circle_anim');
-    circle.style.background = "lightgrey";
+    circle.style.background = "#FAFAFA";
     circle.style.left = mouse_x_pos;
     circle.style.top = mouse_y_pos;
     circle.style.transition = "transform 1s";
@@ -298,6 +298,12 @@ function updateTopMenu() {
       Q('#second_nav_img').style.opacity = 0;
   }
 }
+
 if(b_wth <= 800)
   document.body.style.overflowX = "hidden";
 openDiscoverPage(b_wth/2,Q('#top_menu').offsetHeight - 10);
+
+var features = Qq('.feature');
+for(i in features){
+  features[i].style.height = (b_hgt);
+}
