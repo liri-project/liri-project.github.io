@@ -87,7 +87,7 @@ a {
     width: 100%;
 }
 
-#discover {
+#discover_section {
     background: #EF5350;
     color: white;
     opacity: 0;
@@ -95,7 +95,7 @@ a {
     transition: opacity 0.5s;
 }
 
-#discover > h2 {
+#discover_section > h2 {
     text-align: center;
     margin: 0 80;
     margin-bottom: 80;
@@ -146,7 +146,7 @@ a {
   text-align: right;
 }
 
-#download {
+#download_section {
     color: white;
     opacity: 0;
     background: #546E7A;
@@ -154,7 +154,7 @@ a {
     padding:  40 80;
 }
 
-#about {
+#about_section {
     color: white;
     text-align: center;
     opacity: 0;
@@ -162,7 +162,7 @@ a {
     transition: opacity 0.5s;
 }
 
-#code {
+#code_section {
   color: white;
   text-align: left;
   opacity: 0;
@@ -190,11 +190,11 @@ h3 {
   margin-bottom: 10px;
 }
 
-#download p {
+#download_section p {
   margin-bottom: 10;
 }
 
-#code p a {
+#code_section p a {
   color: lightgrey;
 }
 .hidden {
@@ -260,7 +260,7 @@ h3 {
   padding-bottom: 5;
 }
 
-#download p a {
+#download_section p a {
   color: lightgrey;
 }
 
@@ -492,7 +492,7 @@ h3 {
     padding: 10;
   }
 
-  #discover {
+  #discover_section {
     padding: 20 0;
   }
 
@@ -516,7 +516,7 @@ h3 {
     width: 100%;
   }
 
-  #discover > h2 {
+  #discover_section > h2 {
     margin: 0 10;
     margin-bottom: 50;
   }
@@ -558,6 +558,14 @@ h3 {
   .feature .right {
     text-align: left;
     margin-top: 50;
+  }
+
+  #download_section {
+    padding: 30 30;
+  }
+
+  #code_section {
+    padding: 30 30;
   }
 
   .feature {

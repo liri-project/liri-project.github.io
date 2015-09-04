@@ -108,10 +108,10 @@ function resetCircle(interval) {
 function checkScroll(to_tab) {
   if(posTop() != 0) {
     smoothScrollTo(0,200);
-    setTimeout(function() {openTab(to_tab);},200);
+    setTimeout(function() {addTag(to_tab);},200);
   }
   else {
-    openTab(to_tab);
+    addTag(to_tab);
   }
 }
 
@@ -141,7 +141,7 @@ function openDownloadPage() {
     circle.style.top = mouse_y_pos;
     circle.style.transition = "transform 1s";
     circle.style.transform = 'scale(1000) translateZ(0)';
-    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    var download = Q('#download_section'), discover = Q('#discover_section'), code = Q('#code_section'), about = Q('#about_section');
     download.style.zIndex = 20;
     download.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
     download.style.top = Q('#top_menu').offsetHeight;
@@ -179,7 +179,7 @@ function openCodePage() {
     circle.style.top = mouse_y_pos;
     circle.style.transition = "transform 1s";
     circle.style.transform = 'scale(1000) translateZ(0)';
-    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    var download = Q('#download_section'), discover = Q('#discover_section'), code = Q('#code_section'), about = Q('#about_section');
     code.style.zIndex = 20;
     code.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
     code.style.top = Q('#top_menu').offsetHeight;
@@ -217,7 +217,7 @@ function openAboutPage() {
     circle.style.top = mouse_y_pos;
     circle.style.transition = "transform 1s";
     circle.style.transform = 'scale(1000) translateZ(0)';
-    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    var download = Q('#download_section'), discover = Q('#discover_section'), code = Q('#code_section'), about = Q('#about_section');
     about.style.zIndex = 20;
     about.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
     about.style.top = Q('#top_menu').offsetHeight;
@@ -255,7 +255,7 @@ function openDiscoverPage(x,y) {
     circle.style.top = y;
     circle.style.transition = "transform 1s";
     circle.style.transform = 'scale(1000) translateZ(0)';
-    var download = Q('#download'), discover = Q('#discover'), code = Q('#code'), about = Q('#about');
+    var download = Q('#download_section'), discover = Q('#discover_section'), code = Q('#code_section'), about = Q('#about_section');
     discover.style.minHeight = b_hgt - Q('#top_menu').offsetHeight;
     discover.style.top = Q('#top_menu').offsetHeight;
     discover.style.zIndex = 20;
@@ -301,9 +301,40 @@ function updateTopMenu() {
 
 if(b_wth <= 800)
   document.body.style.overflowX = "hidden";
-openDiscoverPage(mouse_x_pos,mouse_y_pos);
 
 var features = Qq('.feature');
 for(i in features){
-  features[i].style.height = (b_hgt);
+  try {
+    features[i].style.height = b_hgt;
+    }
+  catch (e){
+    console.log("")
+    }
+}
+
+var index = (""+window.location+"").indexOf("#");
+var root;
+
+function router() {
+  if((""+window.location+"").indexOf("#") == -1 && (""+window.location+"").indexOf("#download") == -1 && (""+window.location+"").indexOf("#code") == -1 && (""+window.location+"").indexOf("#about") == -1 && (""+window.location+"").indexOf("#discover") == -1)
+      window.location += "#discover";
+  index = (""+window.location+"").indexOf("#");
+  if(index != -1)
+      root = (""+window.location+"").substring(0,index);
+  else
+      root = (""+window.location+"")
+  if((""+window.location+"") == root + "#discover")
+    openDiscoverPage(mouse_x_pos,mouse_y_pos);
+  if((""+window.location+"") == root + "#download")
+    openDownloadPage();
+  if((""+window.location+"") == root + "#code")
+    openCodePage();
+  if((""+window.location+"") == root + "#about")
+    openAboutPage();
+  }
+
+function addTag(tag) {
+  window.location = root + "#" + tag;
+  router();
+  openTab(tag);
 }

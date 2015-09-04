@@ -12,7 +12,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta charset="utf-8">
 	</head>
-    <body onresize="getViewport()" onscroll="updateTopMenu()" onload="openDiscoverPage(mouse_x_pos,mouse_y_pos);">
+    <body onresize="getViewport()" onscroll="updateTopMenu()" onload="router();">
         <header id="top_menu" class="elevation-1">
             <div id="top_menu_title">
                 <img id="top_menu_title_img" src="images/liri-browser.png">
@@ -27,7 +27,7 @@
 						<img id="second_nav_img" src="images/liri-browser.png">
         </header>
         <div id="circle_anim"></div>
-        <div id="discover" class="content">
+        <div id="discover_section" class="content">
 						<img src="images/macbookair.png" id="laptop">
             <h2 class="center_align">Say hello to Liri, the open-source, cross-plateform and material-design web browser.</h2>
 						<div class="feature" style="background:#78909C">
@@ -109,7 +109,7 @@
 							</div>
 						</div>
         </div>
-        <div id="download" class="content hidden">
+        <div id="download_section" class="content hidden">
             <h2>Releases builds</h2>
 						<p>We will try to provide builds to make things easier for you.</p>
 						<h3>v0.2</h3>
@@ -129,7 +129,7 @@
 							<p>$ make</p>
 						</div>
 				</div>
-				<div id="code" class="content hidden">
+				<div id="code_section" class="content hidden">
             <h2>Help us on GitHub</h2>
 						<p>Wether you want to help us with the code, the translations, or if you want to report bugs, you are always welcomed !<br><br></p>
             <a class="raised_button white" href="https://github.com/liri-browser" target="_blank">GitHub</a>
@@ -141,7 +141,7 @@
 						<p>It would be awesome if you could tell us the bugs you notice when you use Liri, or if you want to suggest new features.
 						<br>Do not hesitate, create an issue <a href="https://github.com/liri-browser/liri-browser/issues">here</a>.</p>
         </div>
-				<div id="about" class="content hidden">
+				<div id="about_section" class="content hidden">
 					<h2 class="center_align black">Authors</h2>
 					<div class="card">
 						<img src="images/avatar_tim.png" class="avatar">
@@ -155,19 +155,21 @@
 							</ul>
 						</div>
 					</div>
-					<div class="card">
-						<img src="images/avatar_pierre.jpg" class="avatar">
-						<div class="leftside">
-							<span class="name">Pierre Jacquier</span>
-							<p class="description">Student at UTBM (France)</p>
-							<ul class="social">
-								<li style="background:#3F51B5"><a href="https://www.facebook.com/pierre.jacquier.7"><span class="socicon">b</span></a></li>
-								<li style="background:#29B6F6"><a href="https://twitter.com/PierreJacquier"><span class="socicon">a</span></a></li>
-								<li style="background:#F44336"><a href="https://plus.google.com/+PierreJacquierFR/"><span class="socicon">c</span></a></li>
-								<li style="background:#212121"><a href="https://github.com/pierremtb"><span class="socicon">Q</span></a></li>
-							</ul>
+					<a href="http://pierre-jacquier.com">
+						<div class="card">
+							<img src="images/avatar_pierre.jpg" class="avatar">
+							<div class="leftside">
+								<span class="name">Pierre Jacquier</span>
+								<p class="description">Student at UTBM (France)</p>
+								<ul class="social">
+									<li style="background:#3F51B5"><a href="https://www.facebook.com/pierre.jacquier.7"><span class="socicon">b</span></a></li>
+									<li style="background:#29B6F6"><a href="https://twitter.com/PierreJacquier"><span class="socicon">a</span></a></li>
+									<li style="background:#F44336"><a href="https://plus.google.com/+PierreJacquierFR/"><span class="socicon">c</span></a></li>
+									<li style="background:#212121"><a href="https://github.com/pierremtb"><span class="socicon">Q</span></a></li>
+								</ul>
+							</div>
 						</div>
-					</div>
+					</a>
 					<h2 class="black center_align" style="margin-top:30px">Contributors</h2>
 						<div class="card">
 								<p class="contrib">Find the complete list on our GitHub. <br>Thank you !</p>
