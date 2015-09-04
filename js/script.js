@@ -136,7 +136,7 @@ function openDownloadPage() {
     Q('#code_icon').className = "material-icons md-18 md-light md-inactive";
     Q('#about_icon').className = "material-icons md-18 md-light md-inactive";
     var circle = Q('#circle_anim');
-    circle.style.background = "#42A5F5";
+    circle.style.background = "#546E7A";
     circle.style.left = mouse_x_pos;
     circle.style.top = mouse_y_pos;
     circle.style.transition = "transform 1s";

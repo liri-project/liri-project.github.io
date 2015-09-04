@@ -4,6 +4,7 @@
 		<title>Liri Browser</title>
 		<meta name="description" content="Discover Liri, the open-source and cross-plateform material-design web browser.">
 		<link rel='stylesheet' href='socicon/socicon.css'>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.010/css/hack.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel='stylesheet' href='style/style.css'>
@@ -19,8 +20,8 @@
             </div>
             <ul id="top_menu_nav">
                 <li id="discover_tab" class="selected" onclick="checkScroll('discover')"><i id="discover_icon" class="material-icons md-18 md-light">explore</i><span>Discover</span></li>
-                <li id="download_tab" onclick="checkScroll('download')"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span>Download 0.2</span></li>
-                <li id="code_tab"  onclick="checkScroll('code')"><i class="material-icons md-18 md-light md-inactive" id="code_icon" >code</i><span>Get the code</span></li>
+                <li id="download_tab" onclick="checkScroll('download')"><i id="download_icon"  class="material-icons md-18 md-light md-inactive">file_download</i><span>Download</span></li>
+                <li id="code_tab"  onclick="checkScroll('code')"><i class="material-icons md-18 md-light md-inactive" id="code_icon" >code</i><span>Contribute</span></li>
                 <li id="about_tab"  onclick="checkScroll('about')"><i class="material-icons md-18 md-light md-inactive" id="about_icon" >perm_identity</i><span>About</span></li>
             </ul>
 						<img id="second_nav_img" src="images/liri-browser.png">
@@ -109,11 +110,25 @@
 						</div>
         </div>
         <div id="download" class="content hidden">
-            <h1>Linux</h1>
-            <a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">Simple Installation Script</a>
-            <h1>Windows</h1>
-            <a class="raised_button white" href="https://github.com/liri-browser/liri-browser/releases/download/v0.2/material-browser-0.2-windows-portable-testing.zip" target="_blank">Portable version (.zip)</a>
-        </div>
+            <h2>Releases builds</h2>
+						<p>We will try to provide builds to make things easier for you.</p>
+						<h3>v0.2</h3>
+						<a class="raised_button white" href="https://github.com/liri-browser/liri-browser/releases/download/v0.2/material-browser-0.2-windows-portable-testing.zip" target="_blank">Windows Portable (.zip)</a>
+            <br><br><br>
+						<h2>From source</h2>
+						<h3>Automated</h3>
+            <a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">Linux Script</a>
+						<br>
+						<a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">AUR Package</a>
+						<h3>Manual</h3>
+						<p>You need Qt5.5 (see <a href="http://qt.io">qt.io</a>) and QML-Material (instructions at <a href="https://github.com/papyros/qml-material">QML-Material repo</a>)</p>
+						<div class="code">
+							<p>$ git clone https://github.com/liri-browser/liri-browser</p>
+							<p>$ cd liri-browser</p>
+							<p>$ qmake</p>
+							<p>$ make</p>
+						</div>
+				</div>
 				<div id="code" class="content hidden">
             <h1>Code on GitHub</h1>
             <a class="raised_button white" href="https://github.com/liri-browser" target="_blank">GitHub</a>
