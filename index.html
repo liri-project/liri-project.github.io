@@ -12,7 +12,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta charset="utf-8">
 	</head>
-    <body onresize="getViewport()" onscroll="updateTopMenu()">
+    <body onresize="getViewport()" onscroll="updateTopMenu()" onload="openDiscoverPage(mouse_x_pos,mouse_y_pos);">
         <header id="top_menu" class="elevation-1">
             <div id="top_menu_title">
                 <img id="top_menu_title_img" src="images/liri-browser.png">
@@ -119,9 +119,9 @@
 						<h3>Automated</h3>
             <a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">Linux Script</a>
 						<br>
-						<a class="raised_button white" href="https://gist.github.com/tim-sueberkrueb/bdaae352cc6dcaca19b3" target="_blank">AUR Package</a>
+						<a class="raised_button white" href="https://aur.archlinux.org/packages/liri-browser-git/" target="_blank">AUR Package</a>
 						<h3>Manual</h3>
-						<p>You need Qt5.5 (see <a href="http://qt.io">qt.io</a>) and QML-Material (instructions at <a href="https://github.com/papyros/qml-material">QML-Material repo</a>)</p>
+						<p>You need git, qt5-base, qt5-webengine (see <a href="http://qt.io">qt.io</a>) and qml-material (instructions at <a href="https://github.com/papyros/qml-material">QML-Material repo</a>)</p>
 						<div class="code">
 							<p>$ git clone https://github.com/liri-browser/liri-browser</p>
 							<p>$ cd liri-browser</p>
@@ -130,8 +130,16 @@
 						</div>
 				</div>
 				<div id="code" class="content hidden">
-            <h1>Code on GitHub</h1>
+            <h2>Help us on GitHub</h2>
+						<p>Wether you want to help us with the code, the translations, or if you want to report bugs, you are always welcomed !<br><br></p>
             <a class="raised_button white" href="https://github.com/liri-browser" target="_blank">GitHub</a>
+						<h3>Translations</h3>
+						<p>We really need you to make Liri available for more languages. It only takes 10' of your time, and helps us a lot.
+						<br>Check the guide <a href="https://github.com/liri-browser/liri-browser/wiki/Translations">here</a>.
+						<br><br></p>
+						<h3>Bug reports</h3>
+						<p>It would be awesome if you could tell us the bugs you notice when you use Liri, or if you want to suggest new features.
+						<br>Do not hesitate, create an issue <a href="https://github.com/liri-browser/liri-browser/issues">here</a>.</p>
         </div>
 				<div id="about" class="content hidden">
 					<h2 class="center_align black">Authors</h2>

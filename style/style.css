@@ -164,10 +164,11 @@ a {
 
 #code {
   color: white;
-  text-align: center;
+  text-align: left;
   opacity: 0;
   background: #26A69A;
   transition: opacity 0.5s;
+  padding: 40 80;
 }
 
 h1 {
@@ -193,6 +194,9 @@ h3 {
   margin-bottom: 10;
 }
 
+#code p a {
+  color: lightgrey;
+}
 .hidden {
     display: none;
     opacity: 0;

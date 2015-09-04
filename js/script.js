@@ -301,7 +301,7 @@ function updateTopMenu() {
 
 if(b_wth <= 800)
   document.body.style.overflowX = "hidden";
-openDiscoverPage(b_wth/2,Q('#top_menu').offsetHeight - 10);
+openDiscoverPage(mouse_x_pos,mouse_y_pos);
 
 var features = Qq('.feature');
 for(i in features){
