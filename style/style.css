@@ -483,6 +483,7 @@ h3 {
 
   #top_menu_title {
     padding: 5 0;
+    padding-bottom: 10;
   }
 
   #top_menu_title_text {
@@ -491,6 +492,10 @@ h3 {
 
   #top_menu_nav li {
     padding: 10;
+  }
+    
+  #top_menu_title_img {
+      width: 60;
   }
 
   #discover_section {
@@ -572,6 +577,13 @@ h3 {
   .feature {
     padding-top: 130px;
     padding: 10;
+  }
+    
+  .avatar {
+      float: none;
+      margin-left: 80;
+      width: 120;
+      margin-bottom: 10;
   }
 
 

@@ -286,7 +286,7 @@ function updateTopMenu() {
     if(b_wth > 800)
       top_menu.style.transform = "translateY(-" + (nav_top_offset - 25)+ "px)";
     else
-      top_menu.style.transform = "translateY(-" + (nav_top_offset - 12)+ "px)";
+      top_menu.style.transform = "translateY(-" + (nav_top_offset - 8)+ "px)";
     top_menu.style.position = "fixed";
     if(b_wth > 800)
       Q('#second_nav_img').style.opacity = 1;
