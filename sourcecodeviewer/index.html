@@ -5,6 +5,28 @@
   <script src="http://softwaremaniacs.org/media/soft/highlight/highlight.pack.js"></script>
   <script src="test.js"></script>
   <script src="beautify-html.js"></script>
+  <script type="text/javascript">
+    function setSource(theme, temp) {
+        var head = document.head, link = document.createElement('link');
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.href = 'http://softwaremaniacs.org/media/soft/highlight/styles/' + theme + '.css';
+        head.appendChild(link);
+        var sc = '<!DOCTYPE html><html>' + decodeURI( temp ) + '</html>';
+        sc = style_html(sc, {
+          'indent_size': 2,
+          'indent_char': ' ',
+          'max_char': 48,
+          'brace_style': 'expand',
+          'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']
+        });
+        sc = sc.replace(/</g, '&lt');
+        sc = sc.replace(/>/g, '&gt');
+        document.getElementById('source_container').innerHTML = sc;
+        hljs.highlightBlock(document.getElementById('source_container'));
+        document.getElementById('source_container').style.fontFamily = 'Hack';
+    }
+  </script>
   <title>Source</title>
 </head>
 <body style="margin:0;padding:0">
