@@ -6,6 +6,8 @@
   <script src="test.js"></script>
   <script src="beautify-html.js"></script>
   <script type="text/javascript">
+    document.addEventListener("SetSource", function (event) { setSource(event.theme, event.temp); });</script>
+
     function setSource(theme, temp) {
         var head = document.head, link = document.createElement('link');
         link.type = 'text/css';
