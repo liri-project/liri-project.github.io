@@ -227,7 +227,7 @@ h3 {
   width: 500px;
   padding: 16;
   display: inline-block;
-  margin: 20 10;
+  margin: 10;
   text-align: left;
   transition: 0.5s;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
