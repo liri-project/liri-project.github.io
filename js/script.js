@@ -102,6 +102,7 @@ function resetCircle(interval) {
     circle.style.top = 0;
     circle.style.transition = "none";
     circle.style.transform = 'scale(10) translateZ(0)';
+    circle.style.WebkitTransform = 'scale(10) translateZ(0)';
   }, interval);
 }
 
@@ -142,6 +143,7 @@ function openDownloadPage() {
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
   circle.style.transform = 'scale(1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -183,6 +185,7 @@ function openCodePage() {
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
   circle.style.transform = 'scale(1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -224,6 +227,7 @@ function openAboutPage() {
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
   circle.style.transform = 'scale(1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -265,6 +269,7 @@ function openDiscoverPage(x, y) {
   circle.style.top = y;
   circle.style.transition = "transform 1s";
   circle.style.transform = 'scale(1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -296,15 +301,19 @@ var nav_top_offset = Q('#top_menu_nav').offsetTop;
 function updateTopMenu() {
   var top_menu = Q('#top_menu');
   if (posTop() > nav_top_offset) {
-    if (b_wth > 800)
+    if (b_wth > 800) {
       top_menu.style.transform = "translateY(-" + (nav_top_offset - 25) + "px)";
-    else
+      top_menu.style.WebkitTransform = "translateY(-" + (nav_top_offset - 25) + "px)";
+    } else {
       top_menu.style.transform = "translateY(-" + (nav_top_offset - 8) + "px)";
+      top_menu.style.WebkitTransform = "translateY(-" + (nav_top_offset - 8) + "px)";
+    }
     top_menu.style.position = "fixed";
     if (b_wth > 800)
       Q('#second_nav_img').style.opacity = 1;
   } else {
     top_menu.style.transform = "translateY(0px)";
+    top_menu.style.WebkitTransform = "translateY(0px)";
     top_menu.style.position = "relative";
     if (b_wth > 800)
       Q('#second_nav_img').style.opacity = 0;
