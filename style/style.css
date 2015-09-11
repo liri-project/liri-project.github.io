@@ -59,7 +59,7 @@ a {
   color: white;
 }
 #second_nav_img {
-  position: fixed;
+  position: absolute;
   bottom: 10;
   transition: 0.5s;
   right: 30;
