@@ -311,6 +311,18 @@ h3 {
   font-size: 18;
   font-weight: 400;
 }
+
+.separator {
+  width: 80;
+  height: 2;
+  margin: auto;
+  margin-top: 40;
+}
+
+.red {
+  background: #F44336;
+}
+
 .socicon-twitter:before {
   content: "a";
 }
