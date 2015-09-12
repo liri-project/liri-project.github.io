@@ -101,8 +101,8 @@ function resetCircle(interval) {
     circle.style.left = 0;
     circle.style.top = 0;
     circle.style.transition = "none";
-    circle.style.transform = 'scale(10) translateZ(0)';
-    circle.style.WebkitTransform = 'scale(10) translateZ(0)';
+    circle.style.transform = 'scale3d(0,0,0) translateZ(0)';
+    circle.style.WebkitTransform = 'scale3d(0,0,0) translateZ(0)';
   }, interval);
 }
 
@@ -142,8 +142,8 @@ function openDownloadPage() {
   circle.style.left = mouse_x_pos;
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
-  circle.style.transform = 'scale(1000) translateZ(0)';
-  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
+  circle.style.transform = 'scale3d(1000,1000,1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale3d(1000,1000,1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -184,8 +184,8 @@ function openCodePage() {
   circle.style.left = mouse_x_pos;
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
-  circle.style.transform = 'scale(1000) translateZ(0)';
-  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
+  circle.style.transform = 'scale3d(1000,1000,1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale3d(1000,1000,1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -226,8 +226,8 @@ function openAboutPage() {
   circle.style.left = mouse_x_pos;
   circle.style.top = mouse_y_pos;
   circle.style.transition = "transform 1s";
-  circle.style.transform = 'scale(1000) translateZ(0)';
-  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
+  circle.style.transform = 'scale3d(1000,1000,1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale3d(1000,1000,1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
@@ -268,8 +268,8 @@ function openDiscoverPage(x, y) {
   circle.style.left = x;
   circle.style.top = y;
   circle.style.transition = "transform 1s";
-  circle.style.transform = 'scale(1000) translateZ(0)';
-  circle.style.WebkitTransform = 'scale(1000) translateZ(0)';
+  circle.style.transform = 'scale3d(1000,1000,1000) translateZ(0)';
+  circle.style.WebkitTransform = 'scale3d(1000,1000,1000) translateZ(0)';
   var download = Q('#download_section'),
     discover = Q('#discover_section'),
     code = Q('#code_section'),
