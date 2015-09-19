@@ -1,0 +1,18 @@
+html:lang(ar), html:lang(he), html:lang(fa), html:lang(ur){
+	direction: rtl;
+	text-align: right;
+	
+}
+
+html:lang(ar) #laptop, html:lang(he) #laptop, html:lang(fa) #laptop, html:lang(ur) #laptop{
+	margin: 40px -30% 40px 80px;
+	right: 50%;
+}
+
+html:lang(ar) #code_section, html:lang(he) #code_section, html:lang(fa) #code_section, html:lang(ur) #code_section{
+	text-align: right;
+}
+
+html:lang(ar) .card, html:lang(he) .card, html:lang(fa) .card, html:lang(ur) .card{
+	text-align: right;
+}
