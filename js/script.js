@@ -311,10 +311,6 @@ function updateTopMenu() {
     top_menu.style.position = "fixed";
     if (b_wth > 800)
       Q('#second_nav_img').style.opacity = 1;
-      if((Q('html').getAttribute('lang') == 'ar') || (Q('html').getAttribute('lang') == 'he') || (Q('html').getAttribute('lang') == 'fa') || (Q('html').getAttribute('lang') == 'ur')){
-        Q('#second_nav_img').style.right = 'auto';
-        Q('#second_nav_img').style.left = '30px';
-      }
   } else {
     top_menu.style.transform = "translateY(0px)";
     top_menu.style.WebkitTransform = "translateY(0px)";
