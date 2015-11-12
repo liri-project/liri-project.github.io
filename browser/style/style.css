@@ -249,6 +249,9 @@ html[lang="ar"] .code {
   transition: 0.5s;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
 }
+html[lang="ar"] .card {
+    text-align: right;
+}
 .card:hover {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 }
