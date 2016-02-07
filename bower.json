@@ -1,0 +1,21 @@
+{
+  "name": "Liri Project",
+  "description": "Liri Project website",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "liri"
+  ],
+  "authors": [
+    "Liri Project"
+  ],
+  "license": "MIT",
+  "homepage": "liriproject.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
