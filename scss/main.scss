@@ -1,146 +1,155 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@import 'materialize';
+@import '../bower_components/Materialize/sass/materialize.scss';
 
 $bg: color("blue-grey", "darken-4") !default;
 
-
 body {
-    margin: 0;
-    top: 0;
-    padding: 0;
+  margin: 0;
+  top: 0;
+  padding: 0;
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .spaced {
-    letter-spacing: 20px;
+  letter-spacing: 20px;
 }
 
 .app_icon {
-    position:absolute;
-    left:-59px;
-    width:118px;
-    height:115px;
-    top: -5px;
-    height: 118px;
+  position: absolute;
+  left: -59px;
+  width: 118px;
+  height: 115px;
+  top: -5px;
+  height: 118px;
 }
 
 .app_title {
-    margin-top: 0px;
-    font-size: 2rem;
+  margin-top: 0px;
+  font-size: 2rem;
 }
 
 .col.s12.m6.l3 {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .hoverable {
-    cursor: pointer;
-    position: relative;
-    margin: 20px;
-    padding: 20px;
-    color: white;
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+  color: white;
+  margin: 20px 0px;
 }
 
-
+#tags {
+  span {
+    margin: 10px 20px;
+    font-size:25px;
+    font-weight:300;
+    font-style: italic;
+  }
+}
 
 .relative {
-    position: relative;
+  position: relative;
+}
+
+h1 {
+  font-weight:300;
 }
 
 .inverted {
-    color: black;
-    background: white;
-    padding: 2px 20px;
-    font-weight: 300;
-    padding-right: 0px;
+  color: black;
+  background: white;
+  padding: 2px 20px;
+  font-weight: 300;
+  padding-right: 0px;
 }
 
 .separator {
-    width: 100px;
-    height: 2px;
-    background: white;
-    margin: 0px auto;
-    margin-bottom: 20px;
-    transition: 1s;
+  width: 100px;
+  height: 2px;
+  background: white;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  transition: 1s;
 }
 
 .bottom {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 
 .paper_sheet {
-    height: 100vh;
-    padding: 20px 50px;
-    box-sizing: border-box;
-    position: relative;
+  height: 100vh;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 #paper_sheet_1 {
-    padding: 0px;
+  padding: 0px;
 }
 
 header {
-    z-index: 100;
+  z-index: 100;
 }
 
 #paper_sheet_1 {
-    width:100%;
-    z-index:99;
+  width: 100%;
+  z-index: 99;
   background: $bg;
-    
-    .card-content {
-        color: white;
-        margin-left: 50px;
-    }
+
+  .card-content {
+    color: white;
+    margin-left: 50px;
+  }
 }
 
-
 #paper_sheet_2 {
-    z-index: 98;
-    position: fixed;
-    width: 100%;
-    top:0;
-    
-    background: white;
+  z-index: 98;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  background: white;
 }
 
 .fab {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
 }
 
 #paper_sheet_3 {
-    z-index: 97;
-    position: fixed;
-    width: 100%;
-    top:0;
-    
-    background: grey;
+  z-index: 97;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  background: grey;
 }
 
 #apps {
-    .col.s6 {
-        padding: 10px 60px;
-    }
+  .col.s6 {
+    padding: 10px 60px;
+  }
 }
 
 .paper_sheet.ghost {
-    z-index: 0;
-    background: red;
+  z-index: 0;
+  background: red;
 }

@@ -2,92 +2,100 @@
 <html>
 
 <head>
-    <title>Liri Project</title>
-    <meta name="description" content="Discover Liri, the open-source and cross-platform material-design web browser.">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/Materialize/bin/materialize.js"></script>
-    <script src="js/main.js"></script>
-    <meta charset="utf-8">
-    <meta name="theme-color" content="#455A64">
+  <title>Liri Project</title>
+  <meta name="description" content="Discover Liri, the open-source and cross-platform material-design web browser.">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,500italic,300italic' rel='stylesheet' type='text/css'>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/Materialize/bin/materialize.js"></script>
+  <script src="js/main.js"></script>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#455A64">
 </head>
 
 <body onscroll="checkPosition()">
-    <header style="position: absolute;top:0;width:100%;">
-        <h1 class="white-text center uppercase thin spaced"><span class="inverted">Liri</span> Project</h1>
-        
-        <p class="center">
-            <a href="" class="btn-flat white-text transparent">cross platform</a>
-            <a href="" class="btn-flat white-text transparent">open source</a>
-            <a href="" class="btn-flat white-text transparent">material design</a>
-        </p>
-    </header>
-    <div class="paper_sheet z-depth-2 valign-wrapper" id="paper_sheet_1">
-        <div class="valign" style="width:100%">
-           <div class="row" style="margin-top:140px">
-               <div class="col s10 offset-s1" style="padding-left:100px">
-                   <div class="row" id="apps">
-                <div class="col s6 ">
-                    <div class=" hoverable">
-                       <img src="images/liri-browser.png" alt="" class="app_icon">
-                        <div class="card-content">
-                            <span class="app_title" style=""><span class="regular">Liri</span> <span class="light">Browser</span></span>
-                            <p>Chromium-based web browser.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col  s6 ">
-                    <div class=" hoverable">
-                        <img src="images/liri-calculator.png" alt="" class="app_icon">
-                        <div class="card-content">
-                            <span class="app_title" style=""><span class="regular">Liri</span> <span class="light">Calculator</span></span>
-                            <p>Simple, yet full featured calculator.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col  s6 ">
-                    <div class=" hoverable">
-                        <img src="images/liri-music.png" alt="" class="app_icon">
-                        <div class="card-content">
-                            <span class="app_title" style=""><span class="regular">Liri</span> <span class="light">Music</span></span>
-                            <p>Beautiful and powerful music player.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col  s6 ">
-                    <div class=" hoverable">
-                        <img src="images/liri-player.png" alt="" class="app_icon">
-                        <div class="card-content">
-                            <span class="app_title" style=""><span class="regular">Liri</span> <span class="light">Player</span></span>
-                            <p>VLC-based media player.</p>
-                        </div>
-                    </div>
-                </div>
+<header style="position: absolute;top:0;width:100%;">
+  <h1 class="white-text center uppercase spaced"><span class="inverted">Liri</span> Project</h1>
+
+  <p class="center" id="tags">
+    <span class="white-text transparent">Cross platform</span>
+    <span class="white-text transparent">Open source</span>
+    <span class="white-text transparent">Material design</span>
+  </p>
+</header>
+<div class="paper_sheet z-depth-2 valign-wrapper" id="paper_sheet_1">
+  <div class="valign" style="width:100%">
+    <div class="container" style="margin-top:140px">
+        <div class="row" id="apps">
+          <div class="col s6 ">
+            <div class=" hoverable">
+              <img src="images/liri-browser.png" alt="" class="app_icon">
+              <div class="card-content">
+                <span class="app_title" style=""><span class="regular">Liri</span> <span
+                        class="light">Browser</span></span>
+                <p>Chromium-based web browser.</p>
+              </div>
             </div>
-               </div>
-           </div>
-            
-            <br>
-            <div class="bottom">
-                <p class="white-text center"><i class="material-icons medium" style="">keyboard_arrow_down</i></p>
+          </div>
+          <div class="col  s6 ">
+            <div class=" hoverable">
+              <img src="images/liri-calculator.png" alt="" class="app_icon">
+              <div class="card-content">
+                <span class="app_title" style=""><span class="regular">Liri</span> <span class="light">Calculator</span></span>
+                <p>Simple, yet full featured calculator.</p>
+              </div>
             </div>
+          </div>
+          <div class="col  s6 ">
+            <div class=" hoverable">
+              <img src="images/liri-music.png" alt="" class="app_icon">
+              <div class="card-content">
+                <span class="app_title" style=""><span class="regular">Liri</span> <span
+                        class="light">Music</span></span>
+                <p>Beautiful and powerful music player.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col  s6 ">
+            <div class=" hoverable">
+              <img src="images/liri-player.png" alt="" class="app_icon">
+              <div class="card-content">
+                <span class="app_title" style=""><span class="regular">Liri</span> <span
+                        class="light">Player</span></span>
+                <p>VLC-based media player.</p>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
-    <div class="paper_sheet z-depth-2" id="paper_sheet_2">
-        <h1>Designed for Papyros</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </div>
-    <div class="paper_sheet" id="paper_sheet_3">
-        <h1>About us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </div>
-    <div class="paper_sheet ghost" id="paper_sheet_2_1">
 
+    <br>
+    <div class="bottom">
+      <p class="white-text center"><i class="material-icons medium" style="">keyboard_arrow_down</i></p>
     </div>
-    <div class="paper_sheet ghost" id="paper_sheet_2_1">
+  </div>
+</div>
+<div class="paper_sheet z-depth-2" id="paper_sheet_2">
+  <h1>Designed for Papyros</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+</div>
+<div class="paper_sheet" id="paper_sheet_3">
+  <h1>About us</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+</div>
+<div class="paper_sheet ghost" id="paper_sheet_2_1">
 
-    </div>
+</div>
+<div class="paper_sheet ghost" id="paper_sheet_2_1">
+
+</div>
 
 </body>
 
